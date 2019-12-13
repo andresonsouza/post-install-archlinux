@@ -1,2 +1,7 @@
 # post-install-archlinux
-Preparando o Arch para ambinte de produção
+#
+- Brave Browser
+- Wine-staging
+- NodeJS
+- Angular ClI
+- Typescript
