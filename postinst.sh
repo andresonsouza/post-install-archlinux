@@ -114,3 +114,8 @@ sudo systemctl start redis
 sudo systemctl enable redis
 sudo systemctl start memcached
 sudo systemctl enable memcached 
+
+# ZSH
+sudo pacman -Sy zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo zplugin light zdharma/fast-syntax-highlighting >> ~/.zshrc
