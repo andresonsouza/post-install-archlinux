@@ -108,14 +108,33 @@ sudo usermod -aG docker $USER
 sudo systemctl start docker
 sudo systemctl enable docker
 
+base=https://github.com/docker/machine/releases/download/v0.16.0 &&
+  curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
+  sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
+  chmod +x /usr/local/bin/docker-machine
+
+# Docker Compose -  https://github.com/docker/compose/releases
+sudo -i
+curl -L https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+# Docker Machine - https://github.com/docker/machine/releases
+curl -L https://github.com/docker/machine/releases/download/v0.16.2/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
+    chmod +x /tmp/docker-machine &&
+    sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+
 # Redis, Memcached
 sudo pacman -Sy redis memcached
 sudo systemctl start redis
 sudo systemctl enable redis
 sudo systemctl start memcached
-sudo systemctl enable memcached 
+sudo systemctl enable memcached
 
 # ZSH
 sudo pacman -Sy zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 echo zplugin light zdharma/fast-syntax-highlighting >> ~/.zshrc
+
+# MongoDB
+yay -Sy mongodb
+systemctl enable --now mongodb

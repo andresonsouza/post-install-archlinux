@@ -7,7 +7,7 @@
 - kotlin
 - Elixir
 - Erlang
-- Golang 
+- Golang
 - Ruby
 - Rust
 - Crystal
@@ -20,3 +20,4 @@
 - Redis, Memcached
 - ZSH
 - Oh-my-ZSH
+- MongoDB
