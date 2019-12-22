@@ -2,6 +2,17 @@
 #
 - Brave Browser
 - Wine-staging
-- NodeJS
+- ASDF
+- Clojure
+- kotlin
+- Elixir
+- Erlang
+- Golang 
+- Ruby
+- Rust
+- Crystal
+- NodeJs
 - Angular ClI
 - Typescript
+- Visual Studio Code
+- Postgresql
