@@ -101,3 +101,16 @@ createuser --interactive # create with your username and superuser role
 createdb youruser
 exit
 sudo systemctl restart postgresql
+
+# Docker
+sudo pacman -Sy docker
+sudo usermod -aG docker $USER
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Redis, Memcached
+sudo pacman -Sy redis memcached
+sudo systemctl start redis
+sudo systemctl enable redis
+sudo systemctl start memcached
+sudo systemctl enable memcached 
