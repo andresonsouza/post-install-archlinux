@@ -18,3 +18,5 @@
 - Postgresql
 - Docker
 - Redis, Memcached
+- ZSH
+- Oh-my-ZSH
