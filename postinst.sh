@@ -84,3 +84,20 @@ npm install -g typescript
 
 # Visual Studio Code
 sudo pacman -Sy visual-studio-code-bin
+
+# Postgresql
+sudo pacman -Sy postgresql
+sudo -u postgres -i
+initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
+exit
+
+# Não faça isso em máquinas de produção
+sudo sed -i.bak 's/ident/trust/' /var/lib/postgres/data/pg_hba.conf
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+
+sudo -u postgres -i
+createuser --interactive # create with your username and superuser role
+createdb youruser
+exit
+sudo systemctl restart postgresql
