@@ -16,3 +16,5 @@
 - Typescript
 - Visual Studio Code
 - Postgresql
+- Docker
+- Redis, Memcached
