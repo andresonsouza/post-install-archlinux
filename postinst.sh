@@ -8,19 +8,75 @@ sudo pacman -Sy
 sudo pacman -S wine-staging winetricks
 sudo pacman -S giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo libxcomposite lib32-libxcomposite libxinerama lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader cups samba dosbox
 
-## NodeJS
-mkdir ~/.nvm
-cd ~/.nvm
-export NVM_DIR="$HOME/.nvm" && (
-  git clone https://github.com/creationix/nvm.git "$NVM_DIR"
-  cd "$NVM_DIR"
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-) && \. "$NVM_DIR/nvm.sh"
-echo export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm >> ~/.zshrc
-nvm install v10.17.0 #link_update
+## ASDF
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.6
+echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc
+echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
+sudo apt install \
+  automake autoconf libreadline-dev \
+  libncurses-dev libssl-dev libyaml-dev \
+  libxslt-dev libffi-dev libtool unixodbc-dev \
+  unzip curl
 
-# Angular CLI
+## Principais Linguagens
+
+# Clojure
+asdf plugin-add clojure https://github.com/vic/asdf-clojure.git
+asdf list-all clojure
+asdf install clojure 1.10.1 #update_version
+asdf global clojure 1.10.1 #update_version
+
+# kotlin
+asdf plugin-add kotlin https://github.com/missingcharacter/asdf-kotlin.git
+asdf list-all kotlin
+asdf install kotlin 1.3.61 #update_version
+asdf global kotlin 1.3.61 #update_version
+
+# Elixir
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf list-all elixir
+asdf install elixir 1.9.4 #update_version
+asdf global elixir 1.9.4 #update_version
+
+# Erlang
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf list-all erlang
+asdf install erlang 22.1.8 #update_version
+asdf global erlang 22.1.8 #update_version
+
+# Golang
+asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+asdf list-all golang
+asdf install golang 1.13.5 #update_version
+asdf global golang 1.13.5 #update_version
+
+# Ruby
+asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf list-all ruby
+asdf install ruby 2.6.5 #update_version
+asdf global ruby 2.6.3 #update_version
+
+# Rust
+asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+asdf list-all rust
+asdf install rust 1.39.0 #update_version
+asdf global rust 1.39.0 #update_version
+
+# Crystal
+asdf plugin-add crystal https://github.com/marciogm/asdf-crystal.git
+asdf list-all crystal
+asdf install crystall 0.32.0 #update_version
+asdf global crystal 0.32.0 #update_version
+
+# NodeJs
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+asdf list-all nodejs
+asdf install nodejs 10.18.0 #update_version
+asdf global nodejs 10.18.0 #update_version
+npm i -g npm
+
+# Angular
 npm install -g @angular/cli
 
 # Typescript
