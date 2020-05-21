@@ -147,7 +147,7 @@ sudo pacman -Sy visual-studio-code-bin
 ## MongoDB
 
 ```BASH
-yay -Sy mongodb
+yay -Sy mongodb-bin
 systemctl enable --now mongodb
 ```
 
