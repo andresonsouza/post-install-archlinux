@@ -1,23 +1,26 @@
 # post-install-archlinux
-#
-- Brave Browser
-- Wine-staging
-- ASDF
-- Clojure
-- kotlin
-- Elixir
-- Erlang
-- Golang
-- Ruby
-- Rust
-- Crystal
-- NodeJs
-- Angular ClI
-- Typescript
-- Visual Studio Code
-- Postgresql
-- Docker
-- Redis, Memcached
-- ZSH
-- Oh-my-ZSH
-- MongoDB
+
+* Brave Browser
+* Wine-staging
+* ASDF
+* Clojure
+* kotlin
+* Elixir
+* Erlang
+* Golang
+* Ruby
+* Rust
+* Crystal
+* NodeJs
+* Angular ClI
+* Typescript
+* TypeStrong
+* React App
+* Surge
+* Visual Studio Code
+* MongoDB
+* Postgresql
+* Docker
+* Redis, Memcached
+* ZSH
+* Oh-my-ZSH
