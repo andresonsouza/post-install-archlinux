@@ -15,6 +15,9 @@
 * Angular ClI
 * Typescript
 * TypeStrong
+* Instalação do PHP
+* Install PHP Extensions
+* Instalação Laravel
 * React App
 * Surge
 * Visual Studio Code
