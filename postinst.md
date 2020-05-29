@@ -126,6 +126,30 @@ npm install -g typescript
 npm install -g ts-node
 ```
 
+## Instalação do PHP
+
+```BASH
+sudo pacman -Syu &&
+sudo pacman -S php &&
+php -v
+```
+
+## Install PHP Extensions
+```BASH
+sudo pacman -Syu &&
+sudo pacman -S php-apache php-cgi php-fpm php-gd  php-embed php-intl php-imap  php-redis php-snmp &&
+pacman -Qi php-fpm
+```
+
+## Instalação Laravel
+```BASH
+sudo pacman -Syu &&
+sudo pacman -S php apache php-apache mariadb composer &&
+composer global require "laravel/installer" &&
+echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> .bashrc &&
+echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> .zshrc
+```
+
 ## Biblioteca pra gerar projetos React
 
 ```BASH
